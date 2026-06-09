@@ -1,5 +1,4 @@
 # Zomeetix
-# Zomeetix
 
 Zomeetix is a full-stack meeting scheduling and management platform designed to simplify online appointment booking, meeting organization, and user management. The platform provides separate interfaces for users and administrators, ensuring an efficient and secure experience.
 
