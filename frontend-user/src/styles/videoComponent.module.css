@@ -1,0 +1,996 @@
+.meetShell {
+  --bg-base: #071126;
+  --bg-surface: var(--z-surface-2);
+  --bg-surface-strong: var(--z-surface);
+  --border-soft: var(--z-border);
+  --text-primary: var(--z-text);
+  --text-secondary: var(--z-muted);
+  --brand-blue: var(--z-primary);
+  --brand-cyan: var(--z-secondary);
+  --danger: var(--z-danger);
+  min-height: 100vh;
+  background: var(--z-bg);
+}
+
+.lobbyContainer {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.lobbyCard {
+  width: min(560px, 100%);
+  background: rgba(11, 19, 40, 0.9);
+  border: 1px solid var(--border-soft);
+  border-radius: 24px;
+  padding: 28px;
+  color: #f2f5ff;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.35);
+}
+
+.lobbyOverline {
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: #9eb5ff;
+  text-transform: uppercase;
+}
+
+.roomInfo {
+  margin: 8px 0 16px;
+  color: #c8d5ff;
+}
+
+.connectBtn {
+  margin-top: 12px !important;
+  background: linear-gradient(120deg, var(--brand-blue), var(--brand-cyan)) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 18px rgba(28, 81, 255, 0.28);
+}
+
+.previewWrap {
+  margin-top: 20px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(151, 177, 255, 0.3);
+}
+
+.previewVideo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #020714;
+}
+
+.meetVideoContainer {
+  min-height: 100vh;
+  position: relative;
+  padding: 14px;
+  color: #e9f0ff;
+  display: flex;
+  flex-direction: column;
+}
+
+.meetBody {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding-top: 14px;
+}
+
+.meetBodyWithPanel {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 360px);
+  align-items: stretch;
+}
+
+.meetingHeader {
+  min-height: 72px;
+  border-radius: 16px;
+  position: relative;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(8px);
+}
+
+.meetingHeader h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.meetingMeta {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.metaResetLink {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: #b9d3ff;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.metaResetLink:hover {
+  color: #ffffff;
+}
+
+.metaResetLink:focus-visible {
+  outline: 2px solid rgba(120, 160, 255, 0.65);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.policyPills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.policyPill {
+  font-size: 0.68rem;
+  border-radius: 999px;
+  padding: 2px 8px;
+  border: 1px solid transparent;
+}
+
+.policyPillEnabled {
+  background: rgba(36, 178, 141, 0.18);
+  border-color: rgba(61, 228, 185, 0.35);
+  color: #aef5e3;
+}
+
+.policyPillDisabled {
+  background: rgba(225, 81, 98, 0.16);
+  border-color: rgba(246, 113, 129, 0.35);
+  color: #ffd4d9;
+}
+
+.connectionStatus {
+  text-transform: capitalize;
+  color: #7ff0d5;
+}
+
+.headerRoomLabel {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #98adf9;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  row-gap: 8px;
+  max-width: min(56vw, 760px);
+}
+
+.headerMoreWrap {
+  position: relative;
+}
+
+.headerMoreMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 190px;
+  background: rgba(8, 18, 40, 0.96);
+  border: 1px solid rgba(122, 151, 231, 0.35);
+  border-radius: 12px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 30;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.4);
+}
+
+.headerMoreMenu button {
+  border: 0;
+  background: transparent;
+  color: #e7f0ff;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.headerMoreMenu button:hover {
+  background: rgba(55, 83, 145, 0.48);
+}
+
+.headerMoreMenu button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.recordingPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #ffd0d0;
+  background: rgba(203, 52, 72, 0.3);
+  border: 1px solid rgba(244, 102, 124, 0.5);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.76rem;
+}
+
+.headerIconBtn {
+  color: var(--text-primary) !important;
+  background: rgba(41, 61, 110, 0.72) !important;
+  border: 1px solid rgba(122, 151, 231, 0.22) !important;
+  transition: transform 120ms ease, background 160ms ease !important;
+}
+
+.headerIconBtn:hover {
+  background: rgba(56, 81, 146, 0.9) !important;
+  transform: translateY(-1px);
+}
+
+.reactionOverlay {
+  position: absolute;
+  right: 26px;
+  top: 84px;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.reconnectOverlay {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 86px;
+  background: rgba(185, 86, 19, 0.9);
+  border: 1px solid rgba(255, 203, 147, 0.55);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  z-index: 15;
+}
+
+.reactionBubble {
+  background: rgba(7, 18, 42, 0.82);
+  border: 1px solid rgba(112, 147, 235, 0.35);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+}
+
+.reactionBubble span {
+  font-size: 1.2rem;
+}
+
+.reactionBubble p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.videoStage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 108px;
+}
+
+.videoStagePanelOpen {
+  padding-right: 380px;
+}
+
+.spotlightArea {
+  position: relative;
+  flex: 0 0 auto;
+  height: clamp(240px, 56vh, 560px);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(123, 153, 245, 0.28);
+  background: #030918;
+  margin-bottom: 12px;
+}
+
+.spotlightVideo {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+  transition: transform 140ms ease;
+}
+
+.conferenceView {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.conferenceViewFilmstrip {
+  display: flex;
+  flex: 0 0 auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 2px 0;
+  scrollbar-gutter: stable;
+}
+
+.conferenceViewFilmstrip .remoteTile {
+  width: 220px;
+  flex: 0 0 auto;
+}
+
+.remoteTile {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  background: #040c1f;
+  cursor: pointer;
+}
+
+.fullscreenBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 7;
+  border: 0;
+  background: rgba(8, 17, 38, 0.75);
+  color: #e8f1ff;
+  border-radius: 999px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.fullscreenBtn:hover {
+  background: rgba(58, 98, 255, 0.7);
+}
+
+.pinnedTile {
+  border-color: rgba(82, 241, 199, 0.7);
+}
+
+.activeSpeakerTile {
+  box-shadow: 0 0 0 2px rgba(82, 241, 199, 0.8), 0 0 22px rgba(82, 241, 199, 0.35);
+}
+
+.remoteTile video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  transition: transform 140ms ease;
+}
+
+.zoomableViewport {
+  cursor: grab;
+  user-select: none;
+}
+
+.zoomDragging {
+  cursor: grabbing;
+}
+
+.localVideoWrap {
+  position: fixed;
+  right: 24px;
+  bottom: 94px;
+  width: min(300px, 28vw);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(132, 174, 255, 0.52);
+  background: #081127;
+  z-index: 4;
+  cursor: grab;
+  user-select: none;
+}
+
+.localVideoWrapDragging {
+  cursor: grabbing;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.meetUserVideo {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.videoNameLabel {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  margin: 0;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.58);
+  border-radius: 999px;
+}
+
+.participantStatePill {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  gap: 4px;
+  background: rgba(0, 0, 0, 0.58);
+  border-radius: 999px;
+  padding: 3px 6px;
+}
+
+.gridPager {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(13, 24, 52, 0.76);
+  border: 1px solid rgba(117, 144, 226, 0.25);
+}
+
+.gridPager span {
+  font-size: 0.8rem;
+}
+
+.sidePanel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  background: var(--bg-surface-strong);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 6;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45);
+}
+
+.sidebarVideoStrip {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebarVideoStrip .remoteTile {
+  cursor: pointer;
+}
+
+.settingsPanel {
+  position: fixed;
+  right: 16px;
+  bottom: 92px;
+  width: min(320px, 92vw);
+  background: var(--bg-surface-strong);
+  border: 1px solid var(--border-soft);
+  border-radius: 14px;
+  padding: 12px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settingsPanel h4 {
+  margin: 0;
+}
+
+.settingsPanel label {
+  font-size: 0.82rem;
+  color: #bed0ff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.settingsPanel select {
+  background: rgba(34, 52, 97, 0.88);
+  border: 1px solid rgba(120, 150, 234, 0.3);
+  color: #e7efff;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.toggleRow {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px !important;
+}
+
+.settingsActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.sidePanelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 12px 8px;
+  border-bottom: 1px solid rgba(125, 151, 223, 0.2);
+}
+
+.sidePanelHeader h4 {
+  margin: 0;
+}
+
+.chatThreadPicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px 0;
+  color: #bed0ff;
+  font-size: 0.78rem;
+}
+
+.chatThreadPicker span {
+  white-space: nowrap;
+}
+
+.chatThreadPicker select {
+  flex: 1;
+  background: rgba(34, 52, 97, 0.88);
+  border: 1px solid rgba(120, 150, 234, 0.3);
+  color: #e7efff;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.chatThreadPicker select:focus-visible {
+  outline: 2px solid rgba(120, 160, 255, 0.65);
+  outline-offset: 2px;
+}
+
+.chattingDisplay {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.messageBubble {
+  border-radius: 12px;
+  padding: 10px;
+  max-width: 92%;
+}
+
+.sender {
+  margin: 0 0 2px;
+  font-size: 0.72rem;
+  color: #b8cafc;
+}
+
+.messageBubble p {
+  margin: 0;
+}
+
+.messageBubble span {
+  font-size: 0.68rem;
+  color: #a3b3dd;
+}
+
+.myMessage {
+  align-self: flex-end;
+  background: rgba(47, 109, 255, 0.28);
+  border: 1px solid rgba(130, 172, 255, 0.4);
+}
+
+.theirMessage {
+  align-self: flex-start;
+  background: rgba(34, 50, 89, 0.6);
+  border: 1px solid rgba(105, 136, 223, 0.32);
+}
+
+.systemMessage {
+  align-self: center;
+  background: rgba(7, 173, 146, 0.2);
+  border: 1px solid rgba(82, 224, 194, 0.32);
+  text-align: center;
+}
+
+.typingIndicator {
+  min-height: 20px;
+  margin: 0;
+  padding: 0 14px;
+  font-size: 0.75rem;
+  color: #a9c0ff;
+}
+
+.chattingArea {
+  display: flex;
+  gap: 8px;
+  padding: 10px 12px 12px;
+  border-top: 1px solid rgba(119, 151, 232, 0.2);
+}
+
+.chattingArea :global(.MuiTextField-root) {
+  flex: 1;
+}
+
+.sendBtn {
+  background: linear-gradient(120deg, var(--brand-blue), var(--brand-cyan)) !important;
+  color: white !important;
+}
+
+.participantList {
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.participantItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(40, 60, 108, 0.45);
+}
+
+.participantItem p {
+  margin: 0;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.handBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  color: #ffe0b4;
+  background: rgba(248, 162, 79, 0.18);
+  border: 1px solid rgba(248, 162, 79, 0.35);
+  vertical-align: middle;
+}
+
+.participantInlineState {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.moderationBtn {
+  color: #d8e7ff !important;
+  background: rgba(25, 39, 76, 0.55) !important;
+  border: 1px solid rgba(120, 153, 236, 0.28) !important;
+}
+
+.moderationBtn:hover {
+  background: rgba(45, 68, 128, 0.68) !important;
+}
+
+.removeBtn {
+  color: #ffb6bf !important;
+  background: rgba(214, 58, 82, 0.22) !important;
+}
+
+.hostActions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.hostActions :global(.MuiButton-root) {
+  border-color: rgba(120, 153, 236, 0.36);
+  color: #d8e7ff;
+}
+
+.hostActions :global(.MuiButton-contained) {
+  background: linear-gradient(120deg, var(--brand-blue), #2b7dff);
+}
+
+.hostActions :global(.MuiButton-root.Mui-disabled) {
+  opacity: 0.48;
+}
+
+.qualityControl {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #bed0ff;
+}
+
+.qualityControl select {
+  background: rgba(34, 52, 97, 0.88);
+  border: 1px solid rgba(120, 150, 234, 0.3);
+  color: #e7efff;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.waitingBox {
+  border: 1px solid rgba(120, 160, 250, 0.26);
+  border-radius: 10px;
+  padding: 10px;
+  background: rgba(29, 44, 84, 0.4);
+  margin-bottom: 10px;
+}
+
+.waitingTitle {
+  margin: 0 0 8px;
+  font-size: 0.85rem;
+  color: #bdd0ff;
+}
+
+.waitingItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.waitingItem:last-child {
+  margin-bottom: 0;
+}
+
+.waitingActions {
+  display: flex;
+  gap: 6px;
+}
+
+.participantDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #23d6b4;
+}
+
+.emptyText {
+  color: #9fb2e7;
+}
+
+.buttonContainers {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  background: rgba(9, 19, 41, 0.92);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  padding: 8px 12px;
+  z-index: 8;
+}
+
+.controlBtn {
+  color: var(--text-primary) !important;
+  background: rgba(42, 62, 111, 0.78) !important;
+  border: 1px solid rgba(126, 156, 235, 0.24) !important;
+  transition: transform 120ms ease, background 140ms ease !important;
+}
+
+.controlBtn:hover {
+  background: rgba(57, 83, 147, 0.88) !important;
+  transform: translateY(-1px);
+}
+
+.controlBtn:disabled {
+  opacity: 0.45 !important;
+  color: #9cb0df !important;
+}
+
+.requestUnmuteBtn {
+  color: #d8e7ff !important;
+  border-color: rgba(120, 153, 236, 0.4) !important;
+  background: rgba(25, 39, 76, 0.6) !important;
+  border-radius: 999px !important;
+}
+
+.activeControl {
+  box-shadow: inset 0 0 0 2px rgba(82, 241, 199, 0.7);
+}
+
+.reactionWrap {
+  position: relative;
+}
+
+.reactionTray {
+  position: absolute;
+  bottom: 54px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(8, 20, 50, 0.95);
+  border: 1px solid rgba(108, 145, 239, 0.35);
+  border-radius: 999px;
+  display: flex;
+  gap: 4px;
+  padding: 6px;
+}
+
+.reactionTray button {
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 999px;
+}
+
+.reactionTray button:hover {
+  background: rgba(115, 152, 240, 0.25);
+}
+
+.endBtn {
+  background: var(--danger) !important;
+}
+
+.endForAllBtn {
+  background: #8f1d34 !important;
+}
+
+@media (max-width: 980px) {
+  .meetBodyWithPanel {
+    grid-template-columns: 1fr;
+  }
+
+  .videoStage {
+    padding-right: 0;
+  }
+
+  .sidePanel {
+    position: fixed;
+    top: auto;
+    bottom: 88px;
+    right: 10px;
+    width: min(360px, 92vw);
+    height: min(56vh, 470px);
+  }
+
+  .localVideoWrap {
+    width: 36vw;
+    min-width: 170px;
+    right: 14px;
+    bottom: 96px;
+  }
+
+  .headerActions {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .meetVideoContainer {
+    padding: 8px;
+  }
+
+  .meetingHeader {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .headerActions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-x: visible;
+    padding-bottom: 2px;
+    max-width: 100%;
+  }
+
+  .conferenceView {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .conferenceViewFilmstrip .remoteTile {
+    width: 170px;
+  }
+
+  .localVideoWrap {
+    width: 44vw;
+    min-width: 140px;
+    right: 8px;
+    bottom: 102px;
+  }
+
+  .sidePanel {
+    left: 8px;
+    right: 8px;
+    width: auto;
+    top: auto;
+    bottom: 98px;
+    height: min(58vh, 460px);
+  }
+
+  .buttonContainers {
+    width: calc(100vw - 16px);
+    max-width: 620px;
+    border-radius: 16px;
+    bottom: 10px;
+    padding: 8px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lobbyCard {
+    padding: 18px;
+  }
+
+  .meetingMeta {
+    font-size: 0.72rem;
+  }
+
+  .headerMoreMenu {
+    right: -2px;
+    min-width: 176px;
+  }
+
+  .policyPill {
+    font-size: 0.64rem;
+  }
+
+  .localVideoWrap {
+    width: 45vw;
+    min-width: 110px;
+    border-radius: 12px;
+  }
+
+  .conferenceViewFilmstrip .remoteTile {
+    width: 150px;
+  }
+
+  .buttonContainers {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .controlBtn {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
